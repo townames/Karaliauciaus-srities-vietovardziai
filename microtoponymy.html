@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikrotoponimai (Microtoponymy)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { color: #2c3e50; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; border-bottom: 1px solid #eee; }
+        .lt-name { font-weight: bold; margin-right: 10px; }
+        .de-name { color: #666; font-style: italic; }
+        .source-of { color: #666; font-style: normal; }
+        .url { color: #666; font-style: underline; }
+    </style>
+</head>
+<body>
+    <h1>Mikrotoponimai (Microtoponymy)</h1>
+    <ul id="forest-list"></ul>
+
+    <script>
+        fetch('ktowns.geojson')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('forest-list');
+                const filteredFeatures = data.features.filter(feature => 
+                    feature.properties.adm_ru === "M"
+                );
+
+                filteredFeatures.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span class="lt-name">${feature.properties.lt_names || '---'}</span>
+                        <span class="de-name">(${feature.properties.de_names || '---'})</span>
+                        <span class="source-of">${feature.properties.source_of_ || '---'}</span>
+                        <span class="url">
+                            ${feature.properties.url 
+                            ? `<a href="${feature.properties.url}" target="_blank" rel="noopener noreferrer">${feature.properties.url}</a>` 
+                            : ';---'}
+                        </span>
+                    `;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading geojson:', error);
+            });
+    </script>
+</body>
+</html>

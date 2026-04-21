@@ -1,4 +1,11 @@
-Karaliaučiaus srities vietovardžiai
+
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Karaliaučiaus srities vietovardžiai</title>
+</head>
 
 Noriu praneši iš įvairių šaltinių neseniai baigęs surinkti istorinius Mažosios Lietuvos georeferencinius duomenis į vieną GIS žinyną. Žinyną sudaro dabartinės Rusijos federacijos Karaliaučiaus srities (rusiškai Калининградская область, vokiškai Königsberg, seniau Koeningsberg, Kauningarbs, lotyniškai Regiomons) lietuviški vietovardžiai bei jų vokiškos ir rusiškos atmainos. Šiame atnaujintame rinkinyje dabar apie 5200 gyvenviečių ir 810 upių (įkurtuvių metu buvo 2873 vietovardžiai).
 
@@ -25,3 +32,5 @@ Sukaupus gyvenviečių pavadinimus, teko atidžiai atrinkti jų atitikmenis kito
 Išsamius Karaliaučiaus srities gyvenviečių ir upių sąrašus su tiksliomis jų URL ir GPS koordinatėmis ir vardais trimis kalbomis galite apžiūrėti tiesiogiai internetu, hipertekstiniu pavidalu. Dabartinį vietovardžių sąrašą galima gauti ir SQL užklausa „select“. Kalvų, piliakalnių, klonių, girių vardus, salų, įlankų ir kitus svarbius vandenvardžius dar teks įtraukti ateityje. Linkiu smagaus žemėlapio žvalgymo!
 
 Dėkoju Lietuvos kartografų draugijos pirmininkui prof. Algimantui Česnulevičiui, Maps4u.lt leidėjui, Atvirojo atlaso OSM lietuviškos dalies reguoniui Tomui Straupiui, taip pat kraštotyros žygeiviams Rimantui Matuliui ir archeologui dr. Valdemarui Šimėnui už žinias ir pagalbą, sudarant šią duomenų bazę.
+
+</html>

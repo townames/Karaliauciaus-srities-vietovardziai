@@ -24,7 +24,7 @@
             .then(data => {
                 const list = document.getElementById('forest-list');
                 const filteredFeatures = data.features.filter(feature => 
-                    feature.properties.adm === ""
+                    feature.properties.adm === null
                 );
 
                 filteredFeatures.forEach(feature => {

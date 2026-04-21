@@ -10,6 +10,7 @@
         li { padding: 8px; border-bottom: 1px solid #eee; }
         .lt-name { font-weight: bold; margin-right: 10px; }
         .de-name { color: #666; font-style: italic; }
+        .ru-name { color: #666; font-style: italic; }
         .source-of { color: #666; font-style: normal; }
         .url { color: #666; font-style: underline; margin-right: 10px; }
     </style>
@@ -32,6 +33,7 @@
                     li.innerHTML = `
                         <span class="lt-name">${feature.properties.lt_names || '---'}</span>
                         <span class="de-name">(${feature.properties.de_names || '---'})</span>
+                        <span class="ru-name">(${feature.properties.ru_names || '---'})</span>
                         <span class="source-of">${feature.properties.source_of_ || '---'}</span>
                         <span class="url">
                             ${feature.properties.url 

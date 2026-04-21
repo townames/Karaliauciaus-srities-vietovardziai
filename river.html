@@ -2,7 +2,7 @@
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
-    <title>Upės2 (Rivers)</title>
+    <title>Upės (Rivers)</title>
     <style>
         body { font-family: sans-serif; padding: 20px; }
         h1 { color: #2c3e50; }
@@ -24,7 +24,7 @@
             .then(data => {
                 const list = document.getElementById('forest-list');
                 const filteredFeatures = data.features.filter(feature => 
-                    feature.properties.name_12 === "e"
+                    feature.properties.name_12 <> "e"
                 );
 
 

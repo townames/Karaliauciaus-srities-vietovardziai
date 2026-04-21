@@ -24,8 +24,7 @@
             .then(response => response.json())
             .then(data => {
                 const list = document.getElementById('forest-list');
-                const filteredFeatures = data.features.filter(feature => 
-                     feature.properties.name_lt <> 'a'
+
                 );
 
                 filteredFeatures.forEach(feature => {

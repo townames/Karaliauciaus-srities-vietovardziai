@@ -21,11 +21,20 @@
 
     <script>
         fetch('upeskl_2.geojson')
-            .then(response => response.json())
-            .then(data => {
-                const list = document.getElementById('forest-list');
 
-                );
+    .then(response => response.json())
+    .then(data => {
+        const list = document.getElementById('forest-list');
+        
+        // Simply use all features from the GeoJSON instead of filtering
+        const allFeatures = data.features; 
+
+        // Now you can loop through allFeatures to populate your list
+        allFeatures.forEach(feature => {
+            // Your logic to create list items goes here
+            // e.g., const li = document.createElement('li');
+        });
+    });
 
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');

@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Ežerai(Lakes)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { color: #2c3e50; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; border-bottom: 1px solid #eee; }
+        .name_lt { font-weight: bold; margin-right: 10px; }
+        .name_de { color: #666; font-style: italic; }
+        .source_de { color: #666; font-style: normal; }
+       
+    </style>
+</head>
+<body>
+    <h1>Ežerai(Lakes)</h1>
+    <ul id="forest-list"></ul>
 
+    <script>
+        fetch('upeskl_2.geojson')
+    .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('forest-list');
+                const filteredFeatures = data.features.filter(feature => 
+                    feature.properties.name_12 === "e"
+                );
+
+
+                filteredFeatures.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span class="name_lt">${feature.properties.name_lt || '---'}</span>
+                        <span class="name_de">(${feature.properties.name_de || '---'})</span>
+                        <span class="source_de">${feature.properties.source_de || '---'}</span>
+
+                    `;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading geojson:', error);
+            });
+    </script>
+</body>
+</html>

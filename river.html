@@ -3,7 +3,7 @@
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
-    <title>Parapijos centras (Market town)</title>
+    <title>Upės (Rivers)</title>
     <style>
         body { font-family: sans-serif; padding: 20px; }
         h1 { color: #2c3e50; }
@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <h1>Parapijos centras (Market town)</h1>
+    <h1>Upės (Rivers)</h1>
     <ul id="forest-list"></ul>
 
     <script>
@@ -25,7 +25,7 @@
             .then(data => {
                 const list = document.getElementById('forest-list');
                 const filteredFeatures = data.features.filter(feature => 
-                    feature.properties.adm === "B"
+                    
                 );
 
                 filteredFeatures.forEach(feature => {

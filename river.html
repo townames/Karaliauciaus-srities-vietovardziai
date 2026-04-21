@@ -2,15 +2,15 @@
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
-    <title>Upės (Rivers)</title>
+    <title>Upės2 (Rivers)</title>
     <style>
         body { font-family: sans-serif; padding: 20px; }
         h1 { color: #2c3e50; }
         ul { list-style-type: none; padding: 0; }
         li { padding: 8px; border-bottom: 1px solid #eee; }
-        .lt-name { font-weight: bold; margin-right: 10px; }
-        .de-name { color: #666; font-style: italic; }
-        .source-of { color: #666; font-style: normal; }
+        .name_lt { font-weight: bold; margin-right: 10px; }
+        .name_de { color: #666; font-style: italic; }
+        .source_de { color: #666; font-style: normal; }
        
     </style>
 </head>
@@ -21,25 +21,19 @@
     <script>
         fetch('upeskl_2.geojson')
     .then(response => response.json())
-    .then(data => {
-        const list = document.getElementById('forest-list');
-        
-        // Simply use all features from the GeoJSON instead of filtering
-        const allFeatures = data.features; 
+            .then(data => {
+                const list = document.getElementById('forest-list');
+                const filteredFeatures = data.features.filter(feature => 
+                    feature.properties.name_12 === "e"
+                );
 
-        // Now you can loop through allFeatures to populate your list
-     //   allFeatures.forEach(feature => {
-            // Your logic to create list items goes here
-            // e.g., const li = document.createElement('li');
-     //   });
-  //  });
 
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');
                     li.innerHTML = `
-                        <span class="lt-name">${feature.properties.name_lt || '---'}</span>
-                        <span class="de-name">(${feature.properties.name_de || '---'})</span>
-                        <span class="source-of">${feature.properties.source_de || '---'}</span>
+                        <span class="name_lt">${feature.properties.name_lt || '---'}</span>
+                        <span class="name_de">(${feature.properties.name_de || '---'})</span>
+                        <span class="source_de">${feature.properties.source_de || '---'}</span>
 
                     `;
                     list.appendChild(li);

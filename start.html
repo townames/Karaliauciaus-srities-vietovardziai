@@ -66,6 +66,29 @@
             gap: 30px;
             margin-top: 40px;
         }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav li { margin: 5px 15px; }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #e67e22;
+        }
         @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
         }
@@ -103,6 +126,20 @@
         <p>Istorinių Mažosios Lietuvos georeferencinių duomenų GIS žinynas</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="county.html">Apskritys</a></li>
+            <li><a href="market.html">Miesteliai</a></li>
+            <li><a href="villages.html">Kaimai</a></li>
+            <li><a href="microtoponymy.html">Mikrotoponimai</a></li>
+            <li><a href="meadow.html">Pievos</a></li>
+            <li><a href="mound.html">Piliakalniai</a></li>
+            <li><a href="forest.html">Miškai</a></li>
+            <li><a href="river.html">Upės</a></li>
+            <li><a href="lake.html">Ežerai</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section>
             <p>
@@ -117,17 +154,17 @@
         </section>
 
         <section class="download-box">
-            <h3>Duomenų bylos</h3>
+            <h3>Duomenų bylos .shp formatu GIS programoms</h3>
 <ul>
+        <li>
+        <strong>Rytinės Parusios vietovardžiai:</strong> 
+        <a href="https://on.lt/file_download/285/ktowns.zip">Gyvenviečių vardų duomenų bazė</a> 
+        (place names).
+    </li>
     <li>
         <strong>Rytinės Parusios upės ir ežerai:</strong> 
         <a href="https://on.lt/file_download/286/upeskl_2.zip">Upių vardai ir hidronimai</a> 
         (rivers and lakes).
-    </li>
-    <li>
-        <strong>Rytinės Parusios vietovardžiai:</strong> 
-        <a href="https://on.lt/file_download/285/ktowns.zip">Gyvenviečių vardų duomenų bazė</a> 
-        (place names).
     </li>
 </ul>
         </section>
@@ -194,4 +231,3 @@
         Dėkoju prof. A. Česnulevičiui, T. Straupiui, R. Matuliui ir dr. V. Šimėnui už pagalbą sudarant šią duomenų bazę.
     </footer>
 </body>
-

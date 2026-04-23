@@ -19,6 +19,8 @@
     <h1>Ežerai (Lakes)</h1>
     <ul id="forest-list"></ul>
 
+
+
     <script>
         fetch('upeskl_2.geojson')
     .then(response => response.json())
@@ -28,6 +30,9 @@
                     feature.properties.name_12 === "e"
                 );
 
+                                filteredFeatures.sort((a, b) => 
+                    (a.properties.name_lt || '').localeCompare(b.properties.name_lt || '', 'lt')
+                );
 
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');

@@ -27,7 +27,9 @@
                 const filteredFeatures = data.features.filter(feature => 
                     feature.properties.adm === "A"
                 );
-
+                filteredFeatures.sort((a, b) => 
+                    (a.properties.lt_names || '').localeCompare(b.properties.lt_names || '', 'lt')
+                );
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');
                     li.innerHTML = `

@@ -41,8 +41,13 @@
                 );
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');
+                    const [longitude, latitude] = feature.geometry.coordinates[0];
+                    const mapX = longitude * 20037508.34 / 180;
+                    const mapY = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180) * 20037508.34 / 180;
+                    const mapSize = 500;
+                    const mapUrl = `https://qgiscloud.com/Townames/KL14/?l=Apskrities%20centras%2CParapijos%20centras%2CVietov%C4%97%2CMi%C5%A1kas%2CMikrotoponimas%2CPiliakalnis%2CJ%C5%ABros%20%C4%AFlanka%2CJ%C5%ABros%20kranto%20linija%2CE%C5%BEerai%2CE%C5%BEer%C5%B3%20pavadinimai%2CDidel%C4%97s%20up%C4%97s%2CUp%C4%97s%2CPalv%C4%97s%2CLietuvos%20siena%2CLenkijos%20siena%2Cktowns%20copy%20copy!%2Cupeskl_2!&bl=osm_hdm&t=KL14&e=${mapX - mapSize},${mapY - mapSize},${mapX + mapSize},${mapY + mapSize}`;
                     li.innerHTML = `
-                        <span class="lt-name">${feature.properties.lt_names || '---'}</span>
+                        <span class="lt-name"><a href="${mapUrl}" target="_blank" rel="noopener noreferrer">${feature.properties.lt_names || '---'}</a></span>
                         <span class="de-name">(${feature.properties.de_names || '---'})</span>
                         <span class="source-of">${feature.properties.source_of_ || '---'}</span>
                         <span class="url">

@@ -9,6 +9,7 @@
         ul { list-style-type: none; padding: 0; }
         li { padding: 8px; border-bottom: 1px solid #eee; }
         .name_lt { font-weight: bold; margin-right: 10px; }
+        .name_lt a { color: inherit; }
         .name_de { color: #666; font-style: italic; }
         .source_de { color: #666; font-style: normal; margin-right: 10px; }
        
@@ -45,8 +46,10 @@
 
                 filteredFeatures.forEach(feature => {
                     const li = document.createElement('li');
+                    const [longitude, latitude] = feature.geometry.coordinates[0][0];
+                    const mapUrl = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=15/${latitude}/${longitude}`;
                     li.innerHTML = `
-                        <span class="name_lt">${feature.properties.name_lt || '---'}</span>
+                        <span class="name_lt"><a href="${mapUrl}" target="_blank" rel="noopener noreferrer">${feature.properties.name_lt || '---'}</a></span>
                         <span class="name_de">(${feature.properties.name_de || '---'})</span>
                         <span class="source_de">${feature.properties.source_de || '---'}</span>
 

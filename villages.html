@@ -31,9 +31,16 @@
     <ul id="forest-list"></ul>
 
     <script>
-        fetch('ktowns.geojson')
-            .then(response => response.json())
-            .then(data => {
+
+
+fetch('ktowns.geojson', { cache: 'no-cache' })
+    .then(response => {
+        if (!response.ok) throw new Error('Nepavyko įkelti ktowns.geojson: ' + response.status);
+        return response.json();
+    })
+    .then(data => {
+
+                
                 const list = document.getElementById('forest-list');
                 const filteredFeatures = data.features.filter(feature => 
                     feature.properties.adm === null
